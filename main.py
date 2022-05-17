@@ -1,16 +1,10 @@
-from fileinput import filename
-from itertools import count
 import math
 import queue
-import random
-from re import S
-
 import tkinter
-from tkinter import CENTER, LEFT, NW, Image, Label, PhotoImage, messagebox, colorchooser, filedialog
-from tkinter.messagebox import NO, askyesno
 import tkinter.filedialog
-
-import PIL
+from tkinter import (CENTER, LEFT, NW, Image, Label, PhotoImage, colorchooser,
+                     filedialog, messagebox)
+from tkinter.messagebox import NO, askyesno
 from PIL import ImageGrab
 
 
@@ -84,8 +78,6 @@ class Main:
 
             self.canvas.delete("all")
 
-        self.canvas.create_polygon(self.coordinates, fill='', outline='black')
-
     def saveCanvas(self):
         filepath = tkinter.filedialog.asksaveasfilename(
             title="Save Canvas", filetypes=[("PNG", "*.png")])
@@ -142,8 +134,6 @@ class Main:
         self.drawLineStop(event)
 
     def drawPixel(self, x, y):
-        self.coordinates.append(x)
-        self.coordinates.append(y)
         self.canvas.create_oval(
             x, y, x+1, y+1, fill=self.color, outline=self.color, width=1)
 
