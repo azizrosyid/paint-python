@@ -44,12 +44,6 @@ class Main:
         self.imageMenu = tkinter.Menu(self.menu, tearoff=0)
         self.menu.add_cascade(label="Add Image", command=self.addImage)
 
-        self.editMenu = tkinter.Menu(self.menu, tearoff=0)
-        self.menu.add_cascade(label="Edit", menu=self.editMenu)
-        self.editMenu.add_command(label="Cut")
-        self.editMenu.add_command(label="Copy")
-        self.editMenu.add_command(label="Paste")
-
         self.insertMenu = tkinter.Menu(self.menu, tearoff=0)
         self.menu.add_cascade(label="Insert", menu=self.insertMenu)
         self.insertMenu.add_command(label="Line", command=self.drawLine)
